@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+
+<title>Crowd Queue</title>
+
+	<meta charset="utf-8"/>
+
+	<!-- mobile client meta data -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-icon-precomposed" href="style/images/icon.png"/> 
+	<!-- <link rel="apple-touch-startup-image" href="style/images/splash.png" /> -->  
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />  
+
+	<!-- local javascript library and style sheets -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="http://cdn.rawgit.com/arschmitz/jquery-mobile-datepicker-wrapper/v0.1.1/jquery.mobile.datepicker.css">
+	<link rel="stylesheet" href="style/custom.min.0.1.css" />
+	<script src="js_bin/script_lib_0.1.js"></script>
+
+	<!-- jQuery Mobile scripts and style Sheets -->
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script id="mobile-datepicker" src="http://cdn.rawgit.com/arschmitz/jquery-mobile-datepicker-wrapper/v0.1.1/jquery.mobile.datepicker.js"></script>
+
+	<!-- jQuery settings -->
+	<script type="text/javascript">
+	
+		var code = "";
+		var vote = "";
+		var new_session = "";
+		var session_status = "";
+		var item_text = "";
+		var item_id = "";
+		var target ="";
+		var mysessions = new Array();
+		var mysessionsStats = new Array();
+		var sessionStat_code = new Array();
+		var sessionStat = new Array();
+
+		if($(window).width() <= 650) {
+			// set default transition 
+			$.mobile.defaultPageTransition = 'slide';
+    	} else {
+			// set default transition 
+			$.mobile.defaultPageTransition = 'none';
+    	}
+
+		$(document).ready(function() {
+			// avoid caching ajax pages in jquery
+			$.ajaxSetup({ cache: false });
+			$.mobile.changePage.defaults.changeHash = false;			
+		});
+
+		$(document).on("pagecontainershow", function(){ // When entering page
+			var activePage = $.mobile.pageContainer.pagecontainer("getActivePage").prop('id');
+			if (activePage == 'home' && firsttime == 1) {
+				loadme(activePage);
+				firsttime++;
+			} else if (activePage == 'home') {
+				$.mobile.silentScroll(0);
+			}
+		});
+
+		function loading(target) {		
+			$('#'+target+'_title').html('Loading');
+			//$('#ppl_search_title').trigger( "updatelayout" );
+			//alert('');
+			setTimeout(function(){
+				loadme('ppl_search'); 
+			}, 2); 
+		}
+
+	  var usr = readCookie('user');
+
+	function tos_test() {
+		var tos = readCookie('tos');
+		if (tos != 1) {
+			$.mobile.changePage('#tos_test', {
+				transition: "none",
+				changeHash: false
+			});
+		}
+	}
+
+	</script>	
+</head>
+<body id="body"> 

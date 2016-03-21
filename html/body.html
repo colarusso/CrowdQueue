@@ -1,0 +1,209 @@
+<div data-role="page" id="home">
+	<div data-role="header" data-id="myheader" data-position="fixed" data-tap-toggle="false" data-theme="b">
+		<a href="#about" data-iconpos="notext" data-icon="info" data-direction="reverse"></a>
+		<h1 id="home_title">Crowd Queue</h1>
+	</div>
+	<div id="home_content" data-role="content" style="text-align:left;max-width:500px;margin:0 auto 0 auto;" >
+	<script>
+	// 1000 = 1 second
+	setTimeout(timedout,2000);
+	function timedout () {
+		document.getElementById("loadmsg").style.display = 'none'; 
+		document.getElementById("reloadmsg").style.display = 'block'; 
+	}
+	</script>
+	<div id="loadmsg" style="text-align:center;margin:20px 0;">
+	<img src="style/images/loading.gif"/>
+	</div>
+
+	<div id="reloadmsg" style="display:none;"> 
+	If this screen hangs for more than a few seconds, you can use the button below to reload.
+	<input type=button value="Reload" onClick="window.top.location.reload();">
+	</div>
+
+	</div><!-- /content -->
+
+</div> 
+
+<div data-role="page" id="about">
+	<div data-role="header" data-id="myheader" data-position="fixed" data-tap-toggle="false" data-theme="b">
+		<a href="javascript:loadme('home');" data-iconpos="notext" data-icon="home"></a>
+		<h1 id="settings_title">About</h1>
+	</div><!-- /header -->
+	<div id="content" data-role="content" style="text-align:left;max-width:500px;margin:0 auto 0 auto;" >
+		<div style="float:left;background:#5489eb;border-radius:15px;padding:10px 15px 14px 15px;color:#fff;text-shadow: none;box-shadow: none;-webkit-box-shadow: none;">
+				I live in mild fear of the audience Q&amp;A. What's up with all of those soliloquies masquerading as questions? Also, what about introverts? What if someone doesn't want to line up behind the mic? So I made this free tool to help mix things up. Pass it on. 
+		</div>
+		<div style="float:left;width:100%;"><div style="float:left;width:0;height:0;border-left:5px solid transparent;border-right:10px solid transparent;border-top:15px solid #5489eb;margin:0 20px;"></div></div>
+		<div style="float:left;width:100%;line-height:40px;margin:5px 0 10px 5px;"><img src="https://pbs.twimg.com/profile_images/497171051793502208/ygwsLgxO.jpeg" style="width:40px;height:40px;border-radius:50%;" align="left"/>&#160;&#160;<a href="https://twitter.com/Colarusso" target="_blank">@Colarusso</a></div>	
+		
+		<div style="float:left;width:100%;">
+		<hr/>
+		<p><b>What does this tool do?</b></p>
+		<p>
+		It helps gatherings solicit and prioritize attendee questions et al. People pull out their phones or laptops, type up their questions/ideas and vote on their peers'. Then a sophisticated algorithm ranks the content and everyone is given a list of the "best" entries. Pros: (1) it gets rid of soliloquies masquerading as questions; (2) it provides a safe space for people who otherwise might not ask questions; and (3) it helps moderators actually get to the content an audience wants addressed. Biggest Con: participants must have access to an internet connected device.
+		</p>
+		<p><b>How does one use this tool?</b></p>
+		<p>
+		If you click "create a new session" on the home page, you'll be walked through the process or running a session. Feel free to create some dummy sessions and play around. A good user interface is like a good joke, if you have to explain it, you've done something wrong. That being said, I've done many things wrong. So I've written a lot of stuff below. Hit me up with questions on twitter <a href="https://twitter.com/Colarusso" target="_blank">@colarusso</a> if that doesn't do the trick. That being said, each session lasts for 48 hours from creation to oblivion. During that time it has the potential to advance through three stages:
+		</p>
+		<p><em>1. Check-In:</em> users check-in with the session code. Users cannot submit or vote on content during this stage.</p>
+		<p><em>2. Open Submissions &amp; Voting:</em> anyone who has checked in can submit content and vote on their peer's submissions. New users are not allowed to check-in during this stage.</p>
+		<p><em>3. Viewing Results:</em> voting ceases, and content is ranked. Anyone with the session code can view the final ranked ordering.</p>
+		<p><b>What do you mean by sophisticated algorithms?</b></p>
+		<p>
+		Really, it's not that sophisticated. I just liked the phraseology. Basicly, we're modeling all content as good or bad and trying to figure out how confident we can be that something's good. To that end, an approximate <a href="https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval" target="_blank">Wilson's score interval</a> is calculated for each entry based on up votes and the total up and down votes. Users work their way through content starting with the least certainly good or bad content. The final list is an ordered list with the highest confidence scores at the top. Consequently, even if participants only vote on a small number of questions, we can say with some confidence that the top questions are actually "good," whatever that means. ;)
+		</p>
+		<p><b>What stops someone from voting multiple times?</b></p>
+		<p>
+		Nothing can really stop this, but a few things can make it less likely. First, all users have to check-in before voting begins. Once voting starts, there are no new check-ins. Consequently, someone can't simply vote, clear their browser's cookies and vote again. Yes, someone could open multiple browsers during check-in, but since the number of participants is clearly displayed to all users, there is a built-in check on too many people doing this. That is, if the session lists more people than you have in the room, someone has been naughty. Put another way--culture. Culture stops cheating. Think <a href="http://blogs.wsj.com/ideas-market/2011/08/10/dan-arielys-students-conduct-experiment-on-cheating/" target="_blank">honor code</a>.  
+		</p>
+		<p><b>What about content that says the same thing in different ways?</b></p>
+		<p>
+		It's a simple matter for someone reading a list of questions to filter this out. It's not so simple for computers. See <a href="http://xkcd.com/1425/" target="_blank">Tasks</a>.
+		</p> 
+		<p align="center">
+		<a href="http://xkcd.com/1425/" target="_blank"><img src="http://imgs.xkcd.com/comics/tasks.png"/ border="0"></a>
+		</p>
+		<p><b>What about silly questions?</b></p>
+		<p>
+		Again, this is something a person is better at filtering out, but <a href="http://www.npr.org/templates/story/story.php?storyId=12169694" target="_blank">I've found</a> that people are actually pretty good at taking this sort of voting seriously. So if something is at the top, moderators ignore it at their own risk.   
+		</p>
+		<p><b>What if attendees don't have smart phones?</b></p>
+		<p>
+		This really is a problem, and it's worth noting that this tool isn't always the right one. If your audience doesn't have phones, this is probably a bad tool. If your audience is two people, this is probably a bad tool. I think a simple heuristic would be that this tool is best suited for venues where you'd need a microphone to hear questions or when you want to encourage participation from people who wouldn't otherwise ask questions. It might also be useful as a tool for small break-out groups who could generate ideas for sharing with and evaluation by the group as a whole. 
+		</p>
+		<p><b>What do you do with my data?</b></p>
+		<p>
+		You may have noticed that you don't have to sign in, and I'm not even using Google Anaylitics. So when you say "my data" we're mostly talking about questions/ideas you wrote and your vote history. I don't have any plans to do much with these other than serve up results, but who knows, maybe if this takes off I'll use the questions as a data set to figure out common characteristics of great questions. I am a <a href="https://lawyerist.com/83582/podcast-20-david-colarusso-hacking-for-justice/" target="_blank">data scientist</a> after all. I'll tell you this, I'm not going to sell it to anyone. 
+		</p>
+		<p><b>Who made this?</b></p>
+		<p>
+		<a href=https://twitter.com/Colarusso" target="_blank">David Colarusso</a> made this because he listened to <a href="https://lawyerist.com/102757/podcast-56-how-to-fix-conference-and-meetings-with-matt-homann/" target="_blank">this podcast</a> a few weeks before being on some panels at the 2016 ABA TechShow. He then had the tought, "Hey, I don't want to be on a bad panel. I'll build an app."
+		</p>
+		<p> The tumbs up and arrow buttons you see when voting on content, as well as in the homescreen icon, are the work of <a href="https://thenounproject.com/term/thumb-up/83151/" target="_blank">Antar</a> and <a href="https://thenounproject.com/term/arrow/37752/" target="_blank">Julien Miclo</a> over at the Noun Project. 	
+		</p>
+		<hr/>
+		<p style="text-align:center;"><a href="https://github.com/colarusso/CrowdQueue" target="_blank">GitHub Repo</a></p>
+		</div>
+	</div>
+</div>
+
+<div data-role="page" id="make">
+	<div data-role="header" data-id="myheader" data-position="fixed" data-tap-toggle="false" data-theme="b">
+		<a href="javascript:loadme('home','slide','reverse');" data-iconpos="notext" data-icon="home" data-direction="reverse"></a>
+		<h1 id="make_title">Create New</h1>
+	</div>
+	<div id="make_content" data-role="content" style="text-align:left;max-width:500px;margin:0 auto 0 auto;" >
+
+	</div><!-- /content -->
+</div>
+
+<div data-role="page" id="make_n">
+	<div data-role="header" data-id="myheader" data-position="fixed" data-tap-toggle="false" data-theme="b">
+		<a href="javascript:loadme('home','slide','reverse');" data-iconpos="notext" data-icon="home" data-direction="reverse"></a>
+		<h1 id="make_n_title">Create New</h1>
+	</div>
+	<div id="make_n_content" data-role="content" style="text-align:left;max-width:500px;margin:0 auto 0 auto;" >
+
+	</div><!-- /content -->
+</div>
+
+
+<div data-role="page" id="ask">
+	<div data-role="header" data-id="myheader" data-position="fixed" data-tap-toggle="false" data-theme="b">
+		<a href="javascript:loadme('home','slide','reverse');" data-iconpos="notext" data-icon="home" data-direction="reverse"></a>
+		<h1 id="ask_title">Submissions</h1>
+		<a href="javascript:close_session(code);" data-iconpos="notext" data-icon="check" class="close" style="display:none;"></a>
+		<div data-role="navbar">
+		<ul>
+			<li><a href="javascript:void('');" class="ui-btn-active ui-state-persist">Add</a></li>
+			<li><a href="javascript:loadme('vote','none');" >Vote</a></li>		
+		</ul>
+	</div><!-- /navbar -->
+	</div>
+	<div id="ask_content" data-role="content" style="text-align:left;max-width:500px;margin:0 auto 0 auto;" >
+
+	</div><!-- /content -->
+</div>
+
+<div data-role="page" id="ask_n">
+	<div data-role="header" data-id="myheader" data-position="fixed" data-tap-toggle="false" data-theme="b">
+		<a href="javascript:loadme('home','slide','reverse');" data-iconpos="notext" data-icon="home" data-direction="reverse"></a>
+		<h1 id="ask_n_title">Submissions</h1>
+		<a href="javascript:close_session(code);" data-iconpos="notext" data-icon="check" class="close" style="display:none;"></a>
+		<div data-role="navbar">
+		<ul>
+			<li><a href="javascript:void('');" class="ui-btn-active ui-state-persist">Add</a></li>
+			<li><a href="javascript:loadme('vote','none');" >Vote</a></li>		
+		</ul>
+	</div><!-- /navbar -->
+	</div>
+	<div id="ask_n_content" data-role="content" style="text-align:left;max-width:500px;margin:0 auto 0 auto;" >
+
+	</div><!-- /content -->
+</div>
+
+<div data-role="page" id="vote">
+	<div data-role="header" data-id="myheader" data-position="fixed" data-tap-toggle="false" data-theme="b">
+		<a href="javascript:loadme('home','slide','reverse');" data-iconpos="notext" data-icon="home" data-direction="reverse"></a>
+		<h1 id="vote_title">Submissions</h1>
+		<a href="javascript:close_session(code);" data-iconpos="notext" data-icon="check" class="close" style="display:none;"></a>
+	<div data-role="navbar">
+		<ul>
+			<li><a href="javascript:loadme('ask','none');" >Add</a></li>
+			<li><a href="javascript:void('');" class="ui-btn-active ui-state-persist">Vote</a></li>		
+		</ul>
+	</div><!-- /navbar -->
+	</div>
+	<div id="vote_content" data-role="content" style="text-align:left;max-width:500px;margin:0 auto 0 auto;" >
+
+	</div><!-- /content -->
+
+	<div data-role="footer" data-id="myfooter" data-position="fixed" data-tap-toggle="false" class="nav-glyphish-example" data-theme="b">
+		<div data-role="navbar" data-grid="b">
+			<ul>
+				<li><a href="javascript:vote='1';loadme('vote','','',2);" id="voteup" data-icon="custom" rel="external">Up</a></li>
+				<li><a href="javascript:vote='0.0';loadme('vote','','',2);" id="next" data-icon="custom">No Opinion</a></li>
+				<li><a href="javascript:vote='-1';loadme('vote','','',2);" id="votedown" data-icon="custom">Down</a></li>
+			</ul>
+		</div>
+	</div>	
+</div>
+
+<div data-role="page" id="vote_n">
+	<div data-role="header" data-id="myheader" data-position="fixed" data-tap-toggle="false" data-theme="b">
+		<a href="javascript:loadme('home','slide','reverse');" data-iconpos="notext" data-icon="home" data-direction="reverse"></a>
+		<h1 id="vote_n_title">Submissions</h1>
+		<a href="javascript:close_session(code);" data-iconpos="notext" data-icon="check" class="close" style="display:none;"></a>
+	<div data-role="navbar">
+		<ul>
+			<li><a href="javascript:loadme('ask','none');" >Add</a></li>
+			<li><a href="javascript:void('');" class="ui-btn-active ui-state-persist">Vote</a></li>		
+		</ul>
+	</div><!-- /navbar -->
+	</div>
+	<div id="vote_n_content" data-role="content" style="text-align:left;max-width:500px;margin:0 auto 0 auto;" >
+
+	</div><!-- /content -->
+
+	<div data-role="footer" data-id="myfooter" data-position="fixed" data-tap-toggle="false" class="nav-glyphish-example" data-theme="b">
+		<div data-role="navbar" data-grid="b">
+			<ul>
+				<li><a href="javascript:vote='1';loadme('vote');" id="voteup" data-icon="custom" rel="external">Up</a></li>
+				<li><a href="javascript:vote='0.0';loadme('vote');" id="next" data-icon="custom">No Opinion</a></li>
+				<li><a href="javascript:vote='-1';loadme('vote');" id="votedown" data-icon="custom">Down</a></li>
+			</ul>
+		</div>
+	</div>	
+</div>
+
+<div data-role="page" id="read">
+	<div data-role="header" data-id="myheader" data-position="fixed" data-tap-toggle="false" data-theme="b">
+		<a href="javascript:loadme('home','slide','reverse');" data-iconpos="notext" data-icon="home" data-direction="reverse"></a>
+		<h1 id="read_title">Results</h1>
+	</div>
+	<div id="read_content" data-role="content" style="text-align:left;max-width:500px;margin:0 auto 0 auto;" >
+	</div><!-- /content -->
+</div>
+
