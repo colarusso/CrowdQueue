@@ -13,4 +13,4 @@ Install Instructions
 
 License
 ----
-Mostly [MIT](https://github.com/colarusso/CrowsQueue/blob/master/LICENSE) 
+[Mostly MIT](https://github.com/colarusso/CrowdQueue/blob/master/licence.md). 
