@@ -63,12 +63,12 @@
 		<b>The session will end when the author (that's you) clicks the <img src="style/images/check.png" height="18px;" valign="middle;"/> (checkmark) button, found at the tops of the session's submission and voting screens.</b> After this button is pressed, the session will stop accepting new input, and all participants, including you, will be shown an ordered list of the top 100 submissions. 
 		</p>
 
-		<p>You and your session's participants may leave <em>CrowdQueue.org</em> and return to this session by entering the above code for 48 hours after its creation, as long as you/they do not clear your/their browser's cookies.</p><p>Unless you want to close check-in do NOT click the button below. You can come back later and pick up where you left off. Note: you must vote with the same browser you used to check-in. See the <a href="#about" data-direction="reverse">about page</a> for more details.</p>
+		<p>You and your session's participants may leave <em>CrowdQueue.org</em> and return to this session by entering the above code for 90 days after its creation, as long as you/they do not clear your/their browser's cookies.</p><p>Unless you want to close check-in do NOT click the button below. You can come back later and pick up where you left off. Note: you must vote with the same browser you used to check-in. See the <a href="#about" data-direction="reverse">about page</a> for more details.</p>
 		
 		<p>
 		<input type="button" data-theme="b" style="white-space:normal;" value="Close Check-in / Accept Submissions" onClick="code='{session/@code}';session_status=1;loadme('ask');"/>
 </p>	
-				<p><sup>&#8224;</sup> All sessions expire 48 hours after their creation.</p>
+				<p><sup>&#8224;</sup> All sessions expire 90 days after their creation.</p>
 
 		
 		<script type="text/javascript">

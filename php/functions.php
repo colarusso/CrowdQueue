@@ -35,7 +35,7 @@ function choose() {
 	global $dbh;
 	global $userinfo; 
 	if ($valid_user == 1) {
-		$stmt = $dbh->prepare("select code, title, author, status from session_user join sessions on sessions.id = session_user.session where user=? and sessions.created >= (NOW() - INTERVAL 2 DAY) order by sessions.created DESC");
+		$stmt = $dbh->prepare("select code, title, author, status from session_user join sessions on sessions.id = session_user.session where user=? and sessions.created >= (NOW() - INTERVAL 90 DAY) order by sessions.created DESC");
 		$stmt->execute(array($userinfo[1]));
 		$session = array();
 		echo "<sessions error=\"0\" msg=\"\">\n";

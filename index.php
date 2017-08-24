@@ -7,10 +7,10 @@ if (!$_COOKIE['_crowdQ']) {
 	$sttmt->execute(array($hex));
 	$num = $dbh->lastInsertId();
 	$crumb = $hex.'-'.$num;
-	setcookie("_crowdQ", $crumb,time()+(86400*3));
+	setcookie("_crowdQ", $crumb,time()+(86400*91));
 } else {
-	# advance expiration date by three days
-	setcookie("_crowdQ", $_COOKIE['_crowdQ'],time()+(86400*3));
+	# advance expiration date by 14 days
+	setcookie("_crowdQ", $_COOKIE['_crowdQ'],time()+(86400*91));
 }
 header("Content-type:text/html");
 head();	
